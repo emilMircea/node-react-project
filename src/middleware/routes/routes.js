@@ -7,9 +7,9 @@ import calcAvg from '../calcAvg/calcAvg'
 import getGeneralRatings from '../getArrays/getGeneralRatings'
 import writeResultToFile from '../writeResultToFile/writeResultsToFile'
 
-const allReviewsArray = []
-const genRatingsArr = []
-
+const reviewsArray = []
+const generalRatingsArray = []
+const resultObj = {generalRatingResult: null}
 
 // Arrow functions
 router.get('/', (req, res) => {
@@ -22,20 +22,20 @@ router.get('/calc', (req, res) => {
 	fs.readFile(filePath, 'utf8', (err, data) => {
 		if (err) throw err
 		// populate empty array with json data
-		allReviewsArray.push(JSON.parse(data))
+		reviewsArray.push(JSON.parse(data))
 		// populate the general ratings array
-		getGeneralRatings(allReviewsArray, genRatingsArr)
-		// console.log(genRatingsArr);
-		console.log(calcAvg(genRatingsArr)) // log avg of the genRatingsArr
+		getGeneralRatings(reviewsArray, generalRatingsArray)
+		// console.log(generalRatingsArray);
+		console.log(calcAvg(generalRatingsArray)) // log avg of the generalRatingsArray
 		// calc the average and bind it to a constant
-		const generalRatingsCalculatedAverage = calcAvg(genRatingsArr)
+		resultObj.generalRatingResult = calcAvg(generalRatingsArray)
 		// set the path to where the file will be written
 		const calcAvgFilePath = path.join(
 			__dirname,
 			'../../data/generalRatingsCalculatedAverage.json'
 		)
 		// write the result to file
-		writeResultToFile(calcAvgFilePath, JSON.stringify(generalRatingsCalculatedAverage))
+		writeResultToFile(calcAvgFilePath, JSON.stringify(resultObj))
 
 	})
 	// send file to endpoint
