@@ -41,5 +41,5 @@ router.get('/calc', (req, res) => {
 	// send file to endpoint
 	res.sendFile('generalRatingsCalculatedAverage.json', { root: 'src/data' })
 })
-// Exporting an object as the default import for this module
+
 export default router
