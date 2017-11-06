@@ -1,3 +1,3 @@
-const getGeneralRatings = (allRevArr, emptyArr) => allRevArr.map((i) => i.map((item) => emptyArr.push(item.ratings.general.general)))
+const getGeneralRatings = (allReviewsArray, emptyArr) => allReviewsArray.map((i) => i.map((item) => emptyArr.push(item.ratings.general.general)))
 
 export default getGeneralRatings

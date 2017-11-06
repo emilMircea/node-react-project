@@ -20,6 +20,16 @@ yarn start
 # go to localhost:3000 to see all data
 allDataEndpoint is localhost:3000/reviews
 
-calculatedAveragesEndpoint is localhost:3000/calc
+calculatedAveragesEndpoint is localhost:3000/averages
 
 ```
+
+### Testing Tools
+
+- [https://mochajs.org/](https://mochajs.org/)
+
+**How I want to test**
+**test runner:** [mocha](https://mochajs.org/)
+**assertion library:** [chai](http://chaijs.com/)
+**test spies, stubs and mocks:** [sinon](http://sinonjs.org/)
+**api testing:** [supertest](https://github.com/visionmedia/supertest)

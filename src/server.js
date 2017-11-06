@@ -7,8 +7,8 @@ import reviews from './middleware/calcAvg/calcAvg'
 const app = express()
 
 app.use('/', routes)
-// app.use('/', reviews)
-app.use('/', calc)
+app.use('/', reviews)
+// app.use('/', calc)
 
 // arrow functions
 const server = app.listen(3000, () => {
