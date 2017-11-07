@@ -31,3 +31,17 @@ const generalRatings = []
 data.map(i => generalRatings.push(i.ratings.general.general)) // -> yields array with all general ratings
 const average = generalRatings => generalRatings.reduce( ( p, c ) => p + c, 0 ) / generalRatings.length;
 ```
+
+```js
+// extract arrayRatings & Weights - terminal
+current_year = new Date().getFullYear()
+year_of_review = (val) => new Date(val).getFullYear()
+
+constantWeight = 0.5
+variableWeight = (val) =>  1 - (current_year - year_of_review(val)) * 0.1
+
+generalRatingsWithWeights = (arr) => arr.map(item => current_year - year_of_review(item.entryDate) > 5 ? [item.ratings.general.general, constantWeight] : [item.ratings.general.general, variableWeight(item.entryDate)])
+ratingsWeights = generalRatingsWithWeights(arr)
+avg = ratingsWeights.reduce((acc, i) => acc += i[0], 0) / ratingsWeights.length // 8.48
+
+```

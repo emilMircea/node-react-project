@@ -8,9 +8,18 @@ Use those reviews to perform the following tasks:
   - calculate the **average of each of the rating aspects** of the accommodation.
   - calculate the **average or each traveledWith value** of the accommodation.
 
-Keep in mind that each review has to have a weight value in the calculations.
+Keep in mind that **each review has to have a weight value** in the calculations.
 The weight value can be calculated as follows:
 when the review is older than 5 years its weight value defaults to 0.5. Otherwise it equals: 1 - (current_year - year_of_review)*0.1
+
+```js
+
+year_of_review = (val) => new Date(val).getFullYear()
+current_year = new Date().getFullYear()
+weight = 0
+arr.map((i) => current_year - year_of_review(i.entryDate) > 5 ? [i.ratings.general.general, weight=0.5 ] )
+
+```
 
 2) Build a UI to visualise  **the calculated rating values** of the accommodation **along** with the **list of reviews**.
 It is up to you to choose how to serve reviews from the server; the choice will influence the assessment though.

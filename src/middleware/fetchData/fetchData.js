@@ -3,11 +3,11 @@ import fs from 'fs'
 import path from 'path'
 
 // import components
-import getGeneralRatings from '../getArrays/getGeneralRatings'
+import generalRatingsWithWeights from '../arrays/generalRatingsWithWeights'
 import calcAvg from '../calcAvg/calcAvg'
 
 const allReviewsPath = path.join(__dirname, '../../data/reviews.json')
-const generalRatingsArray = []
+const ratingsWeights = []
 const allReviews = []
 const resultObj = {generalRatingResult: null}
 
@@ -16,9 +16,10 @@ const fetchData = (req, res) => {
     if (err) throw err
     allReviews.push(JSON.parse(data))
     // console.log(allReviews);
-    getGeneralRatings(allReviews, generalRatingsArray)
-    // console.log(generalRatingsArray);
-    resultObj.generalRatingResult = calcAvg(generalRatingsArray)
+    const ratingsWeights = generalRatingsWithWeights(allReviews)
+    const average = ratingsWeights.reduce((acc, i) => acc += i[0], 0) / ratingsWeights.length
+    console.log(ratingsWeights);
+    resultObj.generalRatingResult
     // console.log(resultObj);
     res.send(resultObj)
   })
