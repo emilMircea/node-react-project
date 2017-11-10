@@ -77,12 +77,17 @@ class App extends Component {
 		const { filteredReviews, generalRatingsAverage } = this.state
 
 		return (
-			<Wrapper className='wrapper'>
+			<Wrapper className="wrapper">
 				<SideBar className="sidebar">
 					<Nav average={this.state.average} reviews={this.state.reviews} />
 				</SideBar>
-				<Content className='content'>
-					<Title>Tortuga Royale <span className="tag is-info title-tag">{generalRatingsAverage.toFixed(1)}</span></Title>
+				<Content className="content">
+					<Title>
+						Tortuga Royale{' '}
+						<span className="tag is-info title-tag">
+							{generalRatingsAverage.toFixed(1)}
+						</span>
+					</Title>
 					<div className="select is-info">
 						<select
 							value={this.state.categoryName}
@@ -96,7 +101,10 @@ class App extends Component {
 						</select>
 					</div>
 
-					<button onClick={this.sortByMostRecent} className="button is-primary sort-most-recent">
+					<button
+						onClick={this.sortByMostRecent}
+						className="button is-primary sort-most-recent"
+					>
 						Sort by most recent reviews
 					</button>
 					<div className="review-cards">

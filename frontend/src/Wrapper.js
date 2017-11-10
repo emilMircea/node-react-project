@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  display: flex;
-  height: 100%;
-  background: aliceblue;
+	display: flex;
+	height: 100%;
+	background: aliceblue;
 `
 
-export default Wrapper;
+export default Wrapper
