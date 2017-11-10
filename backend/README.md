@@ -26,10 +26,12 @@ calculatedAveragesEndpoint is localhost:3000/averages
 
 ### Testing Tools
 
-- [https://mochajs.org/](https://mochajs.org/)
+**tests coming soon with:**
 
-**How I want to test**
-**test runner:** [mocha](https://mochajs.org/)
-**assertion library:** [chai](http://chaijs.com/)
-**test spies, stubs and mocks:** [sinon](http://sinonjs.org/)
-**api testing:** [supertest](https://github.com/visionmedia/supertest)
+- **test runner:** [mocha](https://mochajs.org/)
+
+- **assertion library:** [chai](http://chaijs.com/)
+
+- **test spies, stubs and mocks:** [sinon](http://sinonjs.org/)
+
+- **api testing:** [supertest](https://github.com/visionmedia/supertest)

@@ -1,0 +1,22 @@
+.App {
+  padding: 2rem;
+}
+
+.navbar-start.is-flex {
+  flex-direction: row;
+  flex-flow: row wrap;
+  height: 100vh;
+}
+
+.sort-most-recent {
+  margin-left: 2rem;
+}
+
+.select.is-info, .sort-most-recent {
+  margin-top: 2rem;
+}
+
+.title-tag {
+  position: relative;
+    bottom: 1rem;
+}

@@ -24,8 +24,8 @@ arr.map((i) => current_year - year_of_review(i.entryDate) > 5 ? [i.ratings.gener
 2) Build a UI to visualise  **the calculated rating values** of the accommodation **along** with the **list of reviews**.
 It is up to you to choose how to serve reviews from the server; the choice will influence the assessment though.
 
-The following functionality is required:
-  - filter by traveledWith value.
-  - sort by travel date or review submission date.
+**The following functionality is required**:
+  - **filter by traveledWith** value.
+  - **sort by travel date** or review submission date.
 
 3) (Nice to implement but not required) implement a **pagination functionality**.
